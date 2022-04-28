@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang='en'>
+<head>
+<meta charset-'utf-8'>
+<title>HR Application</title>
+<script>
+function validateForm(frm)
+{
+var title=frm.title.value.trim();
+var titleErrorSection=document.getElementById('titleErrorSection');
+titleErrorSection.innerHTML='';
+if(title.length==0)
+{
+titleErrorSection.innerHTML='Required';
+frm.title.focus();
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+
+<div style='height:auto;width:90hw;border:1px solid black'>
+
+<div style='height:auto;width:90hw;margin:5px;border:1px solid black'>
+<img src='/styleone/images/logo.png' style='float:left'>
+<div style='font-size:20pt;margin-top:5px;margin-bottom:5px'>Thinking machines
+</div>
+</div>
+
+<div style='width:90hw;height:70vh;margin:5px;border:1px solid black'>
+
+<div style='height:65vh;margin:5px;padding:5px;float:left;border:1px solid black'>
+<b>Designations</b><br>
+<a href='/styleone/employeeView'>Employee</a><br><br>
+<a href='/styleone/index.html'>Home</a>
+</div>
+
+<div style='height:65vh;margin-top:5px;margin-left:105px;margin-right:5px;padding:5px;margin-bottom:px;border:1px solid black'>
+<h3>Designation(Add module)<h3>
+<form action='/styleone/addDesignation' onsubmit='return validateForm(this)'>
+Designation
+<input type='text' name='title' id='title' maxlength='35' size='36'>
+<span id='titleErrorSection' style='color:red'></span><br>
+<button type='submit'>Add</button>
+</form>
+</div>
+</div>
+
+<div style='height:auto;width:90hw;margin:5px;border:1px solid black;text-align:center'>&copy;Thinking Machines 2020
+</div>
+
+</div>
+
+</body>
+</html>

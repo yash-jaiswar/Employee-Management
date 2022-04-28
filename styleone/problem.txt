@@ -1,0 +1,61 @@
+problems in styleone-
+Redundancy-code , styling 
+
+jsp
+
+j2ee compliant web server,jsp ki processign server side pe hoti hai processing hone ke baad jo response gennerate hoga woh client side pe jayega, jsp gets converted into servlet phir us servlet ki processing hogi
+
+jsp-->somefile.java(some code)-->then compile(after compile then classfile create)-->object(doget/dopost)-->response
+
+agar classfile pehle se hi bani hogi toh aise programming ki gayi hai ki woh class dobara nahi banegi ki jab request aati haitoh check kiya jata hai ki eisse compile hoke jo class banai thi woh bani hai kya agar hai toh timestamp check kiya jayega 
+
+aa.jsp                somefile.jsp
+iska timestamp         11am
+10/am,12/12/200        12/12/2000
+date-25,time-08am      10am
+reques
+jsp mai changes kaise track kiye jayenge timestamp se compiled code4 hai yadi uske baad wala code jsp hai meaning yeh compiled hone ke baad jsp mai changes hue hai
+yadi compile hone ke baad jsp mai changes kiye hai toh 
+
+jsp jab java file 
+
+1)variable name-jab seerver jsp se java banayega toh wah out naam ka pointer lega
+2.)scriptlet-<%  %>iske beech mai jo bhi likha hoga woh as it is server pe print hoga
+3.)<%xyz%>-->out.println(xyz) expression form ko out.println mai as it is likh diya jayega, lekin good likha hai toh wah double code mai likha jayega
+
+CSS
+now ab hame redundancy ko kam karna hai toh haam css ka use karenge ek jagah style kar denge aur phir ussse use karenge agar kuch change chahiye toh sirf  css mai change karna hoga link tag ka use karna hoga css ko incorporate karne ke liye
+
+types of container
+a)application b)session c)request d)page
+
+koi cheez agar request wale container mai rakhi hai (isko kahte hai scope) koi  cheez agar request scope mai rakhi hai toh tab tak available hai jab tak response nahi chala jaata
+yadi abc teen servlets hai toh a ne rakhi to b ko bhi milegi c ko bhi milegi aur c response bhejega toh khatam
+
+application-application container ek single container hoga pure program ke liye
+
+jsp tags -tags are processed in server side
+
+1.)useBean-ek id de toh check kiya jayega(request scope kaha toh request scope mai hai kya,session scope kaha toh session scope mai hai kya,application scope kaha toh application scope mai hai kya)phir age jsp is naam ke against bahot kuch kar sakte hai
+
+2.)forward-page='/abcd.html' for ex client side se request ayi abcd.jsp ke liye us jsp mai yeh tag hai iski wajah se ab yeh request abcd.html ko forward kar di jayegi ab abcd.html kya hai client side resource hai toh iske content clients side pe bhej diye jayenge(ya usne ek servlet ko forward kar de servlet server side pe run hoga aur response client side pe bhej dega)
+
+3.)setProperty  name='xy' property='gender' xy jis object ko represent karta hai  toh us object ke liye setgender method chal jayegi aur jo bhi request mai gender ke against hoga woh set kar diya jayega 
+
+property='*' likha toh kya hoga-agar 17 cheeja ayi hai ayr 15 ke liye setter hai toh 15 cheeja set ho jayegi 
+
+4.)getProperty-name='xy ' xy jis bin ko represent karta hai uske liye get gender chalegi aur get gender jo retrun karegi woh document mai dal diya jayega(jo response jaata hai woh pw.println ke through document mai jaata hai aur jo document mai jaata hai woh client side pe jaata hai)
+
+Add Module Designation
+
+style.css(look & feel-classes)
+DesignationAddForm.js
+DesignationAddForm.jsp
+DesignationBean
+AddDesignation.jsp
+AddDesignation(servlets)
+ErrorBean---------|
+MessageBean-------|-->common for all 
+Notification.jsp--|
+
+ 

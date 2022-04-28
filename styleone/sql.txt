@@ -1,0 +1,11 @@
+select employee.id,employee.name,
+employee.designation_code,designation.title,
+employee.date_of_birth,employee.gender,
+employee.is_indian,employee.basic_salary,
+employee.pan_number,employee.aadhar_card_number
+from employee inner join designation on 
+employee.designation_code=designation.code
+
+java -classpath c:\javatools\common\dist\tmcommon.jar com.thinking.machines.util.PwPrintln filename
+
+
